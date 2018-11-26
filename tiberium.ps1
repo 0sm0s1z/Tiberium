@@ -146,7 +146,7 @@ function Get-EgressPorts {
    1..1024 | % {
      $test= new-object system.Net.Sockets.TcpClient
 
-     $wait = $test.beginConnect("allports.exposed",$_,$null,$null)
+     $wait = $test.beginConnect("portquiz.net",$_,$null,$null)
      $resp = ($wait.asyncwaithandle.waitone(250,$false))
 
      if($test.Connected)
