@@ -1,0 +1,105 @@
+.container {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  text-align: center;
+}
+.maincont {
+  position: relative;
+  margin-left: 100px;
+  width 800px
+  left: 10px;
+  top: 30px;
+  padding: 25px;
+}
+
+.container h2 {
+  font-size: 5rem;
+}
+
+.container a {
+  font-size: 1.4rem;
+}
+.navbar {
+  position: fixed;
+  background-color: #322f2f;
+  z-index: 2012;
+  color: #fff;
+  width: 100px;
+  min-height: 100%;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+}
+  .navwidget {
+    position: relative;
+    z-index: 2014;
+    color: #fff;
+    width: 100%;
+    min-height: 100px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    border-bottom: 1px solid #3e3b3c;
+    color: #8D9CA5;
+    font-family: "DejaVuSansCondensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .navlogo {
+    padding-top: 12px;
+    padding-left: 15px;
+    cursor: pointer;
+  }
+  .navicon {
+    padding-top: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+  }
+  .navicon:hover {
+    color: #b2c2cc;
+  }
+
+.iconwrapper {
+  padding-left: 10px;
+}
+.startbtn {
+  font-size: 50px;
+  color: blue;
+  padding: 100px;
+}
+.mast {
+  position: relative;
+  float: left;
+  width: 400px;
+  min-height: 300px;
+  margin-left: 100px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.354em;
+  margin-bottom: 20px;
+}
+.summary {
+  position: relative;
+  min-width: 900px;
+  margin: auto;
+  color: #fff;
+  text-align: left;
+  font-size: .9rem;
+  font-weight: 100;
+  line-height: 1.354em;
+}
+.sumbox {
+  position: relative;
+  float: left;
+  min-width: 300px;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(34,19,19,.75);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(34,19,19,.75);
+  box-shadow: 0px 0px 10px 1px rgba(34,19,19,.75);
+  background-color: #322f2f;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+}

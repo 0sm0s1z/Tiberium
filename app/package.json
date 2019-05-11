@@ -1,0 +1,16 @@
+{
+  "name": "Tiberium",
+  "productName": "Tiberium",
+  "version": "1.0.0",
+  "description": "Command and Control execution and channel scanner.",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Matthew Toussain"
+  },
+  "scripts": {
+    "electron-rebuild": "node -r babel-register ../internals/scripts/ElectronRebuild.js",
+    "postinstall": "yarn electron-rebuild"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}
