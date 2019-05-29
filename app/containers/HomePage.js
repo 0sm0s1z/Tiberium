@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Home from '../components/Home';
 import Nav from '../components/Nav';
+import WindowControls from '../components/WindowControls';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -50,6 +51,7 @@ export default class HomePage extends Component<Props> {
   render() {
     return (
       <MuiThemeProvider theme={this.state.theme}>
+        <WindowControls />
         <Nav />
         <Home />
       </MuiThemeProvider>

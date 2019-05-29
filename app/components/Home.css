@@ -7,8 +7,7 @@
 .maincont {
   position: relative;
   margin-left: 100px;
-  width 800px
-  left: 10px;
+  width800pxleft: 10px;
   top: 30px;
   padding: 25px;
 }
@@ -31,34 +30,35 @@
   right: 0px;
   left: 0px;
 }
-  .navwidget {
-    position: relative;
-    z-index: 2014;
-    color: #fff;
-    width: 100%;
-    min-height: 100px;
-    top: 0px;
-    right: 0px;
-    left: 0px;
-    border-bottom: 1px solid #3e3b3c;
-    color: #8D9CA5;
-    font-family: "DejaVuSansCondensed","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-  }
-  .navlogo {
-    padding-top: 12px;
-    padding-left: 15px;
-    cursor: pointer;
-  }
-  .navicon {
-    padding-top: 20px;
-    padding-left: 20px;
-    cursor: pointer;
-  }
-  .navicon:hover {
-    color: #b2c2cc;
-  }
+.navwidget {
+  position: relative;
+  z-index: 2014;
+  color: #fff;
+  width: 100%;
+  min-height: 100px;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  border-bottom: 1px solid #3e3b3c;
+  color: #8d9ca5;
+  font-family: 'DejaVuSansCondensed', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+.navlogo {
+  padding-top: 12px;
+  padding-left: 15px;
+  cursor: pointer;
+}
+.navicon {
+  padding-top: 20px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+.navicon:hover {
+  color: #b2c2cc;
+}
 
 .iconwrapper {
   padding-left: 10px;
@@ -86,7 +86,7 @@
   margin: auto;
   color: #fff;
   text-align: left;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 100;
   line-height: 1.354em;
 }
@@ -94,12 +94,92 @@
   position: relative;
   float: left;
   min-width: 300px;
-  -webkit-box-shadow: 0px 0px 10px 1px rgba(34,19,19,.75);
-  -moz-box-shadow: 0px 0px 10px 1px rgba(34,19,19,.75);
-  box-shadow: 0px 0px 10px 1px rgba(34,19,19,.75);
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(34, 19, 19, 0.75);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(34, 19, 19, 0.75);
+  box-shadow: 0px 0px 10px 1px rgba(34, 19, 19, 0.75);
   background-color: #322f2f;
   margin-left: 20px;
   margin-bottom: 30px;
   padding-left: 25px;
   padding-bottom: 25px;
+}
+.windowcontrols {
+  -webkit-app-region: no-drag;
+  position: fixed;
+  right: 0px;
+  margin-right: 2px;
+  text-align: left;
+  top: 0;
+  z-index: 3001;
+}
+.windowMax,
+.windowMin,
+.windowClose {
+  text-align: left;
+  float: right;
+  width: 45px;
+  height: 31px;
+  margin: 1px 1px 0 0;
+  text-align: center;
+  line-height: 29px;
+
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -ms-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.windowClose svg,
+.windowMax svg,
+.windowMin svg {
+  width: 10px;
+  height: 10px;
+  shape-rendering: crispEdges;
+  fill: rgba(255, 255, 255, 1);
+}
+.windowClose svg polygon,
+.windowMax svg polygon,
+.windowMin svg polygon {
+  fill: rgba(255, 255, 255, 1);
+  -webkit-transition: fill 0.2s;
+  -moz-transition: fill 0.2s;
+  -ms-transition: fill 0.2s;
+  -o-transition: fill 0.2s;
+  transition: fill 0.2s;
+}
+.windowClose svg polygon {
+  -webkit-transition: fill 0.2s;
+  -moz-transition: fill 0.2s;
+  -ms-transition: fill 0.2s;
+  -o-transition: fill 0.2s;
+  transition: fill 0.2s;
+}
+.windowClose:hover,
+.windowMax:hover,
+.windowMin:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.windowClose:hover svg polygon,
+.windowMax:hover svg path,
+.windowMin:hover svg rect {
+  fill: #222;
+}
+.form {
+  text-align: center;
+  color: #fff;
+  font-family: Roboto, Helvetica;
+  line-height: 1.5em;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.formlabel {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+.formselect {
+  padding-top: 20px;
+  color: red;
 }
