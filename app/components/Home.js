@@ -57,6 +57,9 @@ export default class Home extends Component<Props> {
        hcdata: '',
        ecdata: '',
        scantype: 'Quick Scan',
+       scanning: false,
+       hcscanning: false,
+       ecscanning: false,
        scan: true,
        st: 0,
     };
@@ -69,6 +72,11 @@ export default class Home extends Component<Props> {
       executionPolicy: 'Bypass',
       noProfile: true
     });
+    this.setState({
+      scanning: true,
+      ecscanning: true,
+      hcscanning: true,
+    })
 
     ps.addCommand('Invoke-Expression (New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/0sm0s1z/Tiberium/master/tiberium.ps1")')
     ps.addCommand('Get-HostCapabilities;')
@@ -77,12 +85,16 @@ export default class Home extends Component<Props> {
       let blob = JSON.parse(output);
       console.log(blob)
       this.setState({
-        hcdata: blob
+        hcdata: blob,
+        hcscanning: false,
       })
     })
     .catch(err => {
       console.log(err);
       ps.dispose();
+      this.setState({
+        hcscanning: false,
+      })
     });
 
     let ps2 = new shell({
@@ -98,12 +110,18 @@ export default class Home extends Component<Props> {
         let blob = JSON.parse(output);
         console.log(blob)
         this.setState({
-          ecdata: blob
+          ecdata: blob,
+          scanning: false,
+          ecscanning: false,
         })
       })
       .catch(err => {
         console.log(err);
         ps2.dispose();
+        this.setState({
+          scanning: false,
+          ecscanning: false,
+        })
       });
     } else {
       ps2.addCommand('Get-EgressPorts')
@@ -112,12 +130,18 @@ export default class Home extends Component<Props> {
         let blob = JSON.parse(output);
         console.log(blob)
         this.setState({
-          ecdata: blob
+          ecdata: blob,
+          scanning: false,
+          ecscanning: false,
         })
       })
       .catch(err => {
         console.log(err);
         ps2.dispose();
+        this.setState({
+          scanning: false,
+          ecscanning: false,
+        })
       });
     }
   }
@@ -175,7 +199,7 @@ export default class Home extends Component<Props> {
               <br/>
               <br/>
 
-            { this.state.scan ? <Dashboard hcdata={this.state.hcdata} ecdata={this.state.ecdata}/> : null }
+            { this.state.scan ? <Dashboard hcdata={this.state.hcdata} ecdata={this.state.ecdata} scanning={this.state.scanning} ecscanning={this.state.ecscanning} hcscanning={this.state.hcscanning}/> : null }
 
           </div>
         </div>

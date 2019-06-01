@@ -16,6 +16,8 @@ import Input from '@material-ui/core/Input';
 import MenuItem from '@material-ui/core/MenuItem';
 import Grid from '@material-ui/core/Grid';
 
+import BarLoader from 'react-spinners/BarLoader';
+
 type Props = {};
 
 class HcData extends Component<Props> {
@@ -51,7 +53,14 @@ class ScanBox extends Component<Props> {
   render() {
     return (
       <div className={styles.sumbox}>
-        <img className={styles.navlogo} width="75" src="img/loader.gif" />
+        <div className={styles.loader}>
+          <BarLoader
+            sizeUnit={"px"}
+            width={260}
+            color={'#81838a'}
+            loading={true}
+          />
+        </div>
       </div>
     )
   }
@@ -76,8 +85,8 @@ export default class Dashboard extends Component<Props> {
   render() {
     return (
       <div>
-        { this.state.scanning ? this.state.hcscanning ? <ScanBox /> : <HcData hcdata={this.props.hcdata} /> : <HcData hcdata={this.props.hcdata} /> }
-        { this.state.scanning ? this.state.ecscanning ? <ScanBox /> : null : <EcData ecdata={this.props.ecdata} /> }
+        { this.props.scanning ? this.props.hcscanning ? <ScanBox /> : <HcData hcdata={this.props.hcdata} /> : <HcData hcdata={this.props.hcdata} /> }
+        { this.props.scanning ? this.props.ecscanning ? <ScanBox /> : null : <EcData ecdata={this.props.ecdata} /> }
       </div>
     );
   }

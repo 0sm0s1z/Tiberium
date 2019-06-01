@@ -183,3 +183,7 @@
   padding-top: 20px;
   color: red;
 }
+.loader {
+  position: relative;
+  top: 15px;
+}
