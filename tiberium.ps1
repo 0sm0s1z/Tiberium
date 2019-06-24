@@ -34,7 +34,7 @@ function Get-HostCapabilities {
    # User can run cmd.exe						Windows key "cmd.exe" enter	Do you have a command prompt?
    try
    {
-       Start-Process -FilePath "cmd.exe" -Verb open
+       Start-Process -FilePath "cmd.exe" -Verb open -ArgumentList "/c","exit" -WindowStyle Hidden
        #Write-Host "[+] CMD is executabe!"
        $execcmdexe = "allowed"
    }
@@ -47,7 +47,7 @@ function Get-HostCapabilities {
    # User run powershell.exe						powershell -nop	Do you have a PS > prompt?
    try
    {
-       Start-Process -FilePath "powershell.exe" -Verb open -ArgumentList "nop"
+       Start-Process -FilePath "powershell.exe" -Verb open -ArgumentList "nop" -WindowStyle Hidden
        #Write-Host "[+] PowerShell is executabe!"
        $execpshexe = "allowed"
    }
@@ -60,7 +60,7 @@ function Get-HostCapabilities {
    # User can run 'net' commands						net localgroup adminstrators	Is your user in the group?
    try
    {
-       Start-Process -FilePath "net.exe"
+       Start-Process -FilePath "net.exe" -WindowStyle Hidden
        #Write-Host "[+] NET is executabe!"
        $execnetexe = "allowed"
    }
@@ -72,7 +72,7 @@ function Get-HostCapabilities {
    # User can run 'wmic' commands						wmic os list brief	Did it work?
    try
    {
-       Start-Process -FilePath "wmic.exe" -Verb open
+       Start-Process -FilePath "wmic.exe" -Verb open -ArgumentList "/c","exit" -WindowStyle Hidden
        #Write-Host "[+] WMIC is executabe!"
        $execwmicexe = "allowed"
    }
